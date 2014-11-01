@@ -22,4 +22,4 @@ $font-families: {{ fontfamilies | join: ', ' }};
 
 {% capture fontmixins %}{% for font in current.fonts %}{% for mixin in font.mixins %}{% include atoms/classname.html title=mixin.name %},{% endfor %}{% endfor %}{% endcapture %}{% assign fontmixins = fontmixins | split: ',' %}
 // {{ current.comments[3] }}
-$font-mixins: {{ fontmixins | join: ', ' }};
+$font-mixins: {{ fontmixins | join: ', ' }}; 
