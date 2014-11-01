@@ -1,8 +1,8 @@
 html {
   body {
-    
-    section, article, aside, nav {
-      @include semantic-html5;
-    }
+    @include semantic-html5;
+    @include colors;
+    @include responsive-typography;
+    @include font;
   }
 }

@@ -1,0 +1,22 @@
+---
+---
+{% for page in site.pages %}{% if page.title == "Colors" %}{% assign current = page %}{% endif %}{% endfor %}
+// {{ current.comments[0] }}
+{% for color in current.colors %}${{ color.name }}: {{ color.value }};
+{% endfor %}{% capture colors %}{% for color in current.colors %}{{ color.value }},{% endfor %}{% endcapture %}{% capture colors %}{% include atoms/sanitize.html text=colors separator="~" %}{% endcapture %}{% assign colors = colors | split: ',' %}
+
+// {{ current.comments[2] }}
+@mixin colors($scheme: black-on-white) {
+  {% for pair in current.pairs %} @if ($scheme == {% include atoms/classname.html title=pair.name %}) {
+      color: ${{ pair.foreground }};
+      background-color: ${{ pair.background }};
+  }{% endfor %}
+}
+
+
+// {{ current.comments[1] }}
+$colors: {{ colors | join: ', ' }};
+
+{% capture pairs %}{% for pair in current.pairs %}{% include atoms/classname.html title=pair.name %},{% endfor %}{% endcapture %}{% assign pairs = pairs | split: ',' %}
+// {{ current.comments[3] }}
+$color-pairs: {{ pairs | join: ', ' }};

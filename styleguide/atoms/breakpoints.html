@@ -1,0 +1,59 @@
+---
+layout: styleguide
+title: Breakpoints
+subtitle: The breakpoints used for responsive layouts.
+category: atoms
+files:
+  - name: "breakpoints.scss"
+items:
+  - name: "$breakpoint-mobile"
+    description: Screens with less than 600px width
+    value: "37.5em"
+  - name: "$breakpoint-laptop"
+    description: Screens starting with 1024px width
+    value: "64em"
+  - name: "$breakpoint-desktop"
+    description: Screens with more than 1440px width
+    value: "90em"
+mixins:
+  - name: "mobile"
+    description: Mobile devices in both portrait and landscape mode
+    value: "(max-width: $breakpoint-mobile - 0.001)"
+    start: 0
+    end: 37.5
+  - name: "tablet"
+    description: Tablets in both portrait and landscape mode
+    value: "(min-width: $breakpoint-mobile) and (max-width: $breakpoint-laptop)"
+    start: 37.5
+    end: 64
+  - name: "below-laptop"
+    description: Mobile and tablet devices in both portrait and landscape mode
+    value: "(max-width: $breakpoint-laptop)"
+    start: 0
+    end: 64
+  - name: "laptop-and-up"
+    description: Everything above 1024px
+    value: "(min-width: $breakpoint-laptop + 001)"
+    start: 64
+    end: 100
+  - name: "desktop-and-up"
+    description: For large screens above 1440px
+    value: "(min-width: $breakpoint-desktop)"
+    start: 90
+    end: 100
+---
+
+{% capture example %}
+  {% include styleguide/atoms/sg-breakpoints.html %}
+{% endcapture %}
+
+
+{% capture technical %}
+  <p>
+    Around these breakpoints a set of responsive mixins are defined to cover all possible device sizes and make the design fully responsive.
+  </p>
+  {% include styleguide/atoms/sg-breakpoint-mixins.html %}
+{% endcapture %}
+
+
+{% include styleguide/structures/sg-styleguide-entry.html example=example technical=technical %}

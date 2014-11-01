@@ -1,0 +1,25 @@
+---
+---
+{% for page in site.pages %}{% if page.title == "Fonts" %}{% assign current = page %}{% endif %}{% endfor %}{% capture fonts %}{% for font in current.fonts %}{% if font.from == "Google" %}{{ font.value }}:{{ font.styles }}|{% endif %}{% endfor %}{% endcapture %}
+@import url(http://fonts.googleapis.com/css?family={{ fonts }});
+
+
+// {{ current.comments[2] }}
+@mixin font($type: body) { {% for font in current.fonts %}{% for mixin in font.mixins %}
+  @if ($type == {% include atoms/classname.html title=mixin.name %}) {
+    font-family: "{{ font.name }}", {{ mixin.font-family }};
+    {% for property in mixin.properties %}{{ property.name }}: {{ property.value }};
+    {% endfor %}{% for breakpoint in mixin.breakpoints %}
+    @include {{ breakpoint.name }} {
+      {% for property in breakpoint.values %}{{ property.name }}: {{ property.value }};
+    }{% endfor %}{% endfor %} 
+  }{% endfor %}{% endfor %}
+}
+
+{% capture fontfamilies %}{% for font in current.fonts %}{{ font.name }},{% endfor %}{% endcapture %}{% assign fontfamilies = fontfamilies | split: ',' %}
+// {{ current.comments[1] }}
+$font-families: {{ fontfamilies | join: ', ' }};
+
+{% capture fontmixins %}{% for font in current.fonts %}{% for mixin in font.mixins %}{% include atoms/classname.html title=mixin.name %},{% endfor %}{% endfor %}{% endcapture %}{% assign fontmixins = fontmixins | split: ',' %}
+// {{ current.comments[3] }}
+$font-mixins: {{ fontmixins | join: ', ' }};

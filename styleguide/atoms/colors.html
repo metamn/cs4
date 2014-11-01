@@ -1,0 +1,36 @@
+---
+layout: styleguide
+title: Colors
+subtitle: The colors of the site
+category: atoms
+files:
+  - name: "colors.scss"
+comments:
+  - All color codes
+  - All color codes collected in a list
+  - All color pairs
+  - All color pairs collected in a list
+colors:
+  - name: white
+    value: "hsla(0, 0, 97.5%, 1)"
+    description: background color
+  - name: black
+    value: "hsla(0, 0%, 10%, 1)"
+    description: text color
+  - name: red
+    value: "hsla(0, 100%, 50%, 1)"
+    description: logo color
+pairs:
+  - name: Black on white
+    foreground: black
+    background: white
+    contrast: AAA
+  - name: White on black
+    foreground: white
+    background: black
+    contrast: AAA
+---
+
+
+{% include styleguide/structures/sg-styleguide-entry.html description=description example=example technical=technical %}
+

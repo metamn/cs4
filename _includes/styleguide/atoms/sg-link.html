@@ -1,0 +1,5 @@
+{% if include.folder %}
+  <a href="{{ site.url }}/styleguide/{{ include.folder }}/{{ include.title | downcase  | replace: ' ', '-' }}.html" title="{{ include.title }}">{{ include.title }}</a>
+{% else %}
+  <a href="{{ site.url }}/styleguide/{{ include.title }}" title="{{ include.title | capitalize }}">{{ include.title | capitalize }}</a>
+{% endif %}

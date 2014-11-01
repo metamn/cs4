@@ -1,0 +1,20 @@
+---
+---
+{% for page in site.pages %}{% if page.title == "Responsive Typography" %}{% for item in page.grid %}{% if item.breakpoint %}
+@include {{ item.breakpoint }} {
+  {% for value in item.values %}{{ value.name }}: {{ value.value }};
+  {% endfor %}
+}
+{% else %} 
+{% for value in item.values %}{{ value.name }}: {{ value.value }};
+{% endfor %}{% endif %}{% endfor %}{% endif %}{% endfor %}
+
+@mixin responsive-typography { {% for page in site.pages %}{% if page.title == "Responsive Typography" %}{% for item in page.items %}{% if item.breakpoint %}
+  @include {{ item.breakpoint }} {
+    {% for value in item.values %}{{ value.name }}: {{ value.value }};
+    {% endfor %}
+  }
+  {% else %} 
+  {% for value in item.values %}{{ value.name }}: {{ value.value }};
+  {% endfor %}{% endif %}{% endfor %}{% endif %}{% endfor %} 
+}

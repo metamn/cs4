@@ -1,0 +1,13 @@
+---
+---
+{% for page in site.pages %}{% if page.title == "Breakpoints" %}{% for item in page.items %}{{ item.name }}: {{ item.value }}; // {{ item.description }}
+{% endfor %}{% endif %}{% endfor %}
+
+{% for page in site.pages %}{% if page.title == "Breakpoints" %}{% for item in page.mixins %}
+@mixin {{ item.name }} {
+  // {{ item.description }} 
+  @media only screen and {{ item.value }} {
+    @content
+  }
+}
+{% endfor %}{% endif %}{% endfor %} 
