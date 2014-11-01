@@ -2,7 +2,7 @@ permalink: /:title
 
 title: It's Csongor
 images: assets/images
-#url: http://metamn.github.io/cs4
+url: http://metamn.github.io/cs4
 
 
 exclude: ['Gemfile', 'Gemfile.lock', 'Rakefile', '_scripts/*']
