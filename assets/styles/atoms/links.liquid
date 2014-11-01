@@ -1,11 +1,10 @@
----
----
-@mixin link($type: default) { {% for page in site.pages %}{% if page.title == "Links" %}{% for item in page.items %}
-  @if ($type == {% include atoms/classname.html title=item.name %}) {
+@mixin link($type: default) { 
+  @if ($type == default) {
     a {
-      @include colors({{ item.color-scheme }});
-      {% for property in item.values %}{{ property.name }}: {{ property.value }};
-      {% endfor %}
+      @include colors(black-on-white);
+      text-decoration: none;
+      background-color: transparent;
+      
     }
-  }{% endfor %}{% endif %}{% endfor %}
+  }
 }

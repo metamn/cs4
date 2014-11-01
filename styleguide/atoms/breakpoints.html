@@ -1,59 +1,295 @@
----
-layout: styleguide
-title: Breakpoints
-subtitle: The breakpoints used for responsive layouts.
-category: atoms
-files:
-  - name: "breakpoints.scss"
-items:
-  - name: "$breakpoint-mobile"
-    description: Screens with less than 600px width
-    value: "37.5em"
-  - name: "$breakpoint-laptop"
-    description: Screens starting with 1024px width
-    value: "64em"
-  - name: "$breakpoint-desktop"
-    description: Screens with more than 1440px width
-    value: "90em"
-mixins:
-  - name: "mobile"
-    description: Mobile devices in both portrait and landscape mode
-    value: "(max-width: $breakpoint-mobile - 0.001)"
-    start: 0
-    end: 37.5
-  - name: "tablet"
-    description: Tablets in both portrait and landscape mode
-    value: "(min-width: $breakpoint-mobile) and (max-width: $breakpoint-laptop)"
-    start: 37.5
-    end: 64
-  - name: "below-laptop"
-    description: Mobile and tablet devices in both portrait and landscape mode
-    value: "(max-width: $breakpoint-laptop)"
-    start: 0
-    end: 64
-  - name: "laptop-and-up"
-    description: Everything above 1024px
-    value: "(min-width: $breakpoint-laptop + 001)"
-    start: 64
-    end: 100
-  - name: "desktop-and-up"
-    description: For large screens above 1440px
-    value: "(min-width: $breakpoint-desktop)"
-    start: 90
-    end: 100
----
-
-{% capture example %}
-  {% include styleguide/atoms/sg-breakpoints.html %}
-{% endcapture %}
 
 
-{% capture technical %}
+
+
+
+
+<section id="breakpoints" class="styleguide-entry">
+  <h1>Breakpoints</h1>
+  
+  
+  
+    <article class="subtitle">
+      <h3>Short description</h3>
+
+      The breakpoints used for responsive layouts.
+    </article>
+  
+  
+  
+  
+  
+  <article class="example breakpoints">
+    <h3>Example</h3>
+    
+    
+  
+  
+  
+  
+  
+  
+  
+  <aside id="mobile">
+    <h3>mobile</h3>
+
+    <div class="line" style="width: 37.5%"></div>
+    <div class="info">
+      <span class="size">37.5em</span>
+      <span class="description">Screens with less than 600px width</span>
+    </div>
+  </aside>
+
+  
+  
+  
+  
+  
+  
+  <aside id="laptop">
+    <h3>laptop</h3>
+
+    <div class="line" style="width: 64%"></div>
+    <div class="info">
+      <span class="size">64em</span>
+      <span class="description">Screens starting with 1024px width</span>
+    </div>
+  </aside>
+
+  
+  
+  
+  
+  
+  
+  <aside id="desktop">
+    <h3>desktop</h3>
+
+    <div class="line" style="width: 90%"></div>
+    <div class="info">
+      <span class="size">90em</span>
+      <span class="description">Screens with more than 1440px width</span>
+    </div>
+  </aside>
+
+
+  </article>
+  
+  
+  
+  <article class="technical breakpoints accordion">
+    <h3>Technical description</h3>
+    
+    
   <p>
     Around these breakpoints a set of responsive mixins are defined to cover all possible device sizes and make the design fully responsive.
   </p>
-  {% include styleguide/atoms/sg-breakpoint-mixins.html %}
-{% endcapture %}
+  <aside id="breakpoints-x-axis">
+  <h3>Breakpoints X Axis</h3>
+  
+  
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+  
+  
+  
+  
+  
+    
+      
+    
+  
+    
+  
+    
+      
+      
+      
+    
+  
+    
+  
+    
+      
+      
+      
+    
+  
+    
+  
+    
+      
+      
+      
+    
+  
+    
+  
+    
+      
+      
+      
+    
+  
+    
+  
+  
+  
+  
+  
+    
+    
+    <span class="line" style="width: 37.4%">0</span>
+  
+    
+    
+    <span class="line" style="width: 26.4%">600.0</span>
+  
+    
+    
+    <span class="line" style="width: 25.9%">1024</span>
+  
+    
+    
+    <span class="line" style="width: 9.9%">1440</span>
+  
+</aside>
 
 
-{% include styleguide/structures/sg-styleguide-entry.html example=example technical=technical %}
+  
+  
+  
+  <aside id="mobile">
+    <h3>mobile</h3>
+
+    <div class="line" style="width: 37.5%; margin-left: 0%"></div>
+    <span class="description">Mobile devices in both portrait and landscape mode</span>
+  </aside>
+
+  
+  
+  
+  <aside id="tablet">
+    <h3>tablet</h3>
+
+    <div class="line" style="width: 26.5%; margin-left: 37.5%"></div>
+    <span class="description">Tablets in both portrait and landscape mode</span>
+  </aside>
+
+  
+  
+  
+  <aside id="below-laptop">
+    <h3>below-laptop</h3>
+
+    <div class="line" style="width: 64%; margin-left: 0%"></div>
+    <span class="description">Mobile and tablet devices in both portrait and landscape mode</span>
+  </aside>
+
+  
+  
+  
+  <aside id="laptop-and-up">
+    <h3>laptop-and-up</h3>
+
+    <div class="line" style="width: 36%; margin-left: 64%"></div>
+    <span class="description">Everything above 1024px</span>
+  </aside>
+
+  
+  
+  
+  <aside id="desktop-and-up">
+    <h3>desktop-and-up</h3>
+
+    <div class="line" style="width: 10%; margin-left: 90%"></div>
+    <span class="description">For large screens above 1440px</span>
+  </aside>
+
+
+  </article>
+  
+  
+  
+  <article class="code accordion">
+  <h3>Source code</h3>
+
+  <nav>
+  <h3>Available code snippets</h3>
+
+  <ul>
+    
+      
+      <li>scss</li>
+    
+  </ul>
+</nav>
+
+
+
+  
+  <aside id="scss">
+    <h3>scss</h3>
+    
+    
+        <div class="location">assets/styles/atoms/_breakpoints.scss</div>
+        <div class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nv">$breakpoint-mobile</span><span class="o">:</span> <span class="mi">37</span><span class="mf">.5</span><span class="kt">em</span><span class="p">;</span> <span class="c1">// Screens with less than 600px width</span>
+<span class="nv">$breakpoint-laptop</span><span class="o">:</span> <span class="mi">64</span><span class="kt">em</span><span class="p">;</span> <span class="c1">// Screens starting with 1024px width</span>
+<span class="nv">$breakpoint-desktop</span><span class="o">:</span> <span class="mi">90</span><span class="kt">em</span><span class="p">;</span> <span class="c1">// Screens with more than 1440px width</span>
+
+
+
+<span class="k">@mixin</span><span class="nf"> mobile</span> <span class="p">{</span>
+  <span class="c1">// Mobile devices in both portrait and landscape mode </span>
+  <span class="k">@media</span> <span class="nt">only</span> <span class="nt">screen</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">max-width</span><span class="nd">:</span> <span class="err">$</span><span class="nt">breakpoint-mobile</span> <span class="nt">-</span> <span class="nt">0</span><span class="nc">.001</span><span class="o">)</span> <span class="p">{</span>
+    <span class="k">@content</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">@mixin</span><span class="nf"> tablet</span> <span class="p">{</span>
+  <span class="c1">// Tablets in both portrait and landscape mode </span>
+  <span class="k">@media</span> <span class="nt">only</span> <span class="nt">screen</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">min-width</span><span class="nd">:</span> <span class="err">$</span><span class="nt">breakpoint-mobile</span><span class="o">)</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">max-width</span><span class="nd">:</span> <span class="err">$</span><span class="nt">breakpoint-laptop</span><span class="o">)</span> <span class="p">{</span>
+    <span class="k">@content</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">@mixin</span><span class="nf"> below-laptop</span> <span class="p">{</span>
+  <span class="c1">// Mobile and tablet devices in both portrait and landscape mode </span>
+  <span class="k">@media</span> <span class="nt">only</span> <span class="nt">screen</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">max-width</span><span class="nd">:</span> <span class="err">$</span><span class="nt">breakpoint-laptop</span><span class="o">)</span> <span class="p">{</span>
+    <span class="k">@content</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">@mixin</span><span class="nf"> laptop-and-up</span> <span class="p">{</span>
+  <span class="c1">// Everything above 1024px </span>
+  <span class="k">@media</span> <span class="nt">only</span> <span class="nt">screen</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">min-width</span><span class="nd">:</span> <span class="err">$</span><span class="nt">breakpoint-laptop</span> <span class="o">+</span> <span class="nt">001</span><span class="o">)</span> <span class="p">{</span>
+    <span class="k">@content</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">@mixin</span><span class="nf"> desktop-and-up</span> <span class="p">{</span>
+  <span class="c1">// For large screens above 1440px </span>
+  <span class="k">@media</span> <span class="nt">only</span> <span class="nt">screen</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">min-width</span><span class="nd">:</span> <span class="err">$</span><span class="nt">breakpoint-desktop</span><span class="o">)</span> <span class="p">{</span>
+    <span class="k">@content</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+      
+  </aside>
+  
+
+</article>
+</section>

@@ -1,20 +1,34 @@
----
----
-{% for page in site.pages %}{% if page.title == "Responsive Typography" %}{% for item in page.grid %}{% if item.breakpoint %}
-@include {{ item.breakpoint }} {
-  {% for value in item.values %}{{ value.name }}: {{ value.value }};
-  {% endfor %}
-}
-{% else %} 
-{% for value in item.values %}{{ value.name }}: {{ value.value }};
-{% endfor %}{% endif %}{% endfor %}{% endif %}{% endfor %}
+ 
+$lem: 1.25em !global;
+$text-width: $lem * 15 !global;
 
-@mixin responsive-typography { {% for page in site.pages %}{% if page.title == "Responsive Typography" %}{% for item in page.items %}{% if item.breakpoint %}
-  @include {{ item.breakpoint }} {
-    {% for value in item.values %}{{ value.name }}: {{ value.value }};
-    {% endfor %}
+@include laptop-and-up {
+  $lem: 1.56em !global;
+  $text-width: $lem * 15 !global;
+  
+}
+
+@include desktop-and-up {
+  $lem: 1.56em !global;
+  $text-width: $lem * 15 !global;
+  
+}
+
+
+@mixin responsive-typography { 
+  @include mobile {
+    font-size: 100%;
+    line-height: 1.56;
+    
   }
-  {% else %} 
-  {% for value in item.values %}{{ value.name }}: {{ value.value }};
-  {% endfor %}{% endif %}{% endfor %}{% endif %}{% endfor %} 
+   
+  font-size: 125%;
+  line-height: 1.56;
+  
+  @include desktop-and-up {
+    font-size: 150%;
+    line-height: 1.56;
+    
+  }
+   
 }

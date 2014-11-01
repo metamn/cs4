@@ -1,60 +1,70 @@
----
-layout: styleguide
-title: Fonts
-subtitle: All the font settings for the site
-category: atoms
-scss: "fonts.scss"
-comments:
-  - Served from Typekit
-  - A list of all font families
-  - Special font mixins
-  - A list of all font mixins
-fonts:
-  - name: Montserrat
-    description: A strong sans serif typeface for the logo
-    from: Google
-    value: Montserrat
-    styles: "700"
-    mixins:
-      - name: Logo
-        font-family: sans-serif
-        properties:
-          - name: font-size
-            value: $heading-level-1
-          - name: font-weight
-            value: 700
-          - name: text-transform
-            value: uppercase
-          - name: letter-spacing
-            value: "1.1px"
-  - name: Europa
-    description: A smooth sans serif typeface for both body text and headlines
-    styles: "300,400"
-    mixins:
-      - name: Body
-        font-family: sans-serif
-        properties:
-          - name: font-weight
-            value: 400
----
 
 
-{% capture description %}
+
+
+
+
+
+
+
+
+
+
+<section id="fonts" class="styleguide-entry">
+  <h1>Fonts</h1>
   
-{% endcapture %}
-
-
-{% capture example %}
   
-{% endcapture %}
-
-
-
-{% capture technical %}
   
-{% endcapture %}
+    <article class="subtitle">
+      <h3>Short description</h3>
+
+      All the font settings for the site
+    </article>
+  
+  
+  
+  <article class="description">
+    <h3>Description</h3>
+    
+    
+  
+
+  </article>
+  
+  
+  
+  <article class="example fonts">
+    <h3>Example</h3>
+    
+    
+  
+
+  </article>
+  
+  
+  
+  <article class="technical fonts accordion">
+    <h3>Technical description</h3>
+    
+    
+  
+
+  </article>
+  
+  
+  
+  <article class="code accordion">
+  <h3>Source code</h3>
+
+  <nav>
+  <h3>Available code snippets</h3>
+
+  <ul>
+    
+  </ul>
+</nav>
 
 
 
-
-{% include styleguide/structures/sg-styleguide-entry.html description=description example=example technical=technical %}
+</article>
+</section>
