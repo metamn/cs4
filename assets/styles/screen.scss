@@ -14,3 +14,20 @@
 @import "organisms/**/*";
 @import "structures/**/*";
 @import "pages/**/*";
+
+
+html {
+  body {
+    @include semantic-html5;
+    @include colors;
+    @include responsive-typography;
+    @include font;
+    @include link;
+    
+    #fullpage {
+      #intro {
+        @include intro;
+      }
+    }
+  }
+}

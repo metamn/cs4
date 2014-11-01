@@ -1,0 +1,5 @@
+@mixin text($type) {
+  @if ($type == logo) {
+    @include text-logo;
+  }
+}
