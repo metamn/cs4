@@ -2,4 +2,8 @@
   @if ($type == logo) {
     @include text-logo;
   }
+  
+  @if ($type == body) {
+    @include text-body;
+  }
 }

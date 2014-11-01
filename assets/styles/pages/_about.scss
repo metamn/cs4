@@ -1,1 +1,5 @@
-@mixin about {}
+@mixin about {
+  #strapline {
+    @include strapline;
+  }
+}

@@ -28,6 +28,10 @@ html {
       #intro {
         @include intro;
       }
+      
+      #about {
+        @include about;
+      }
     }
   }
 }

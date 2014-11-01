@@ -25,3 +25,4 @@ html body section > h3, html body article > h3, html body aside > h3, html body 
 @media only screen and (min-width: 90em) { html body { font-size: 150%; line-height: 1.56; } }
 html body a { color: #1a1a1a; background-color: #f9f9f9; text-decoration: none; background-color: transparent; }
 html body #fullpage #intro #header h1 { font-family: "Montserrat", sans-serif; font-size: 1.3077em; font-weight: 700; text-transform: uppercase; letter-spacing: 1.1px; }
+html body #fullpage #about #strapline p { max-width: 23.4em; }
