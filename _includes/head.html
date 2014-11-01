@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" class="{% include atoms/classname.html title=page.title %} {{ page.layout }} {{ page.type }}">
+  <head>
+    <meta charset="utf-8" />
+  	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="author" href="humans.txt" />
+    
+    <title>{{ page.title | append: ' &mdash; ' | append: site.title }}</title> 
+    
+    <!-- Compass with SASS -->
+    {% if include.styleguide %}
+      <link href="{{ site.url }}/assets/styles/styleguide.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    {% else %}
+      <link href="{{ site.url }}/assets/styles/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    {% endif %}
+    
+    <!-- IE 9 -->
+    {% include ie.html %}
+    {% include favicons.html %}
+    
+    <!-- Picturefill Responsive Images -->
+    <script async src="{{ site.url }}/assets/scripts/picturefill.min.js"></script>
+  </head>
+  
+  <body>
+    
+    

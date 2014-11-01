@@ -1,0 +1,1 @@
+{{ include.title | downcase | remove:',' | remove:'&' | remove:"'" | remove: '"' | replace:' ', '-' }}
