@@ -3,7 +3,7 @@ require 'sass-globbing'
 
 # Set this to the root of your project when deployed:
 # http://chriseppstein.github.io/blog/2010/05/17/where-are-your-images/
-http_path = "http://metamn.github.io/fullpage"
+http_path = "http://metamn.github.io/cs4"
 http_images_dir = "assets/images"
 
 css_dir = "assets/styles"

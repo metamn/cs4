@@ -19,8 +19,4 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 
 /* No files to import found in molecules/**\/* */
 /* No files to import found in organisms/**\/* */
-/* No files to import found in structures/**\/* */
-html body #intro { background: lightgreen; }
-html body #about { background: lightblue; }
-html body #portfolio { background: lime; }
-html body #contact { background: magenta; }
+html body section > h3, html body article > h3, html body aside > h3, html body nav > h3 { display: none; }
